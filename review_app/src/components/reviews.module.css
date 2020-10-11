@@ -1,0 +1,142 @@
+.reviews {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.reviews header {
+  flex: 0 0 auto;
+  box-shadow: 0 -10px 10px 5px rgba(0,0,0,0.5);
+
+  z-index: 1;
+}
+
+.reviews header h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 0.5em 0.5em;
+}
+.options .showFavorites {
+  margin-bottom: 1em;
+}
+
+.options .showFavorites label {
+  margin-left: 0.5em;
+}
+
+.options .before label {
+  margin-right: 0.5em;
+}
+
+.scrollArea {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+
+  padding: 0.2em 0;
+  cursor: pointer;
+}
+.review:nth-child(odd) {
+  background: #e1ecf7;
+}
+.review:hover {
+  background: #2073c7;
+  color: white;
+}
+
+.review>span {
+  font-size: 0.7em;
+  line-height: 1.0em;
+  flex: 0 0 auto;
+  margin: 0 0.5em;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+
+.review span.favorite {
+  color: #ced7e2;
+  font-size: 1.25em;
+}
+.review span.favorite.isFavorite {
+  color: #fc86ad;
+}
+.review span.favorite.isFavorite:hover {
+  color: rgb(241, 145, 177);
+}
+.review span.favorite:hover {
+  color: #f8c5d6;
+}
+
+.review span.id {
+  font-family: 'Courier New', Courier, monospace;
+}
+.review span.stars {
+  font-size: 0.5em;
+}
+.review span.text {
+  flex: 1 1 auto;
+
+  /* Start text as hidden in mobile */
+  display: none;
+  visibility: hidden;
+}
+
+.review span.date {
+  flex: 1 1 auto;
+  justify-self: right;
+  text-align: right;
+}
+
+
+@media only screen and (min-width: 400px) {
+  .review {
+    padding: 0.15em 0;
+  }
+  .review>span {
+    font-size: 0.8em;
+    line-height: 1.2em;
+  }
+  .review span.stars {
+    font-size: 0.6em;
+  }
+  .review span.text {
+    display: block;
+    visibility: visible;
+  }
+  .review span.date {
+    flex: 0 0 auto;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .options {
+    flex-direction: row;
+    align-items: center;
+  }
+  .options .showFavorites {
+    margin-bottom: 0;
+  }
+  .review {
+    padding: 0.1em 0;
+  }
+  .review>span {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+  .review span.stars {
+    font-size: 0.75em;
+  }
+}

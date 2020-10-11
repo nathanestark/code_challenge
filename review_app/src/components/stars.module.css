@@ -1,0 +1,11 @@
+.stars span {
+  margin-right: 0em;
+  color: #d4d3d1;
+  font-size: 1.25em;
+}
+.stars spam:last-child {
+  margin-right: 0;
+}
+.stars span.on {
+  color: #f0a856;
+}
